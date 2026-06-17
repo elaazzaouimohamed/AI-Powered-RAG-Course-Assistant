@@ -1,0 +1,796 @@
+Collection : cours_Statistique_cours
+
+113 chunks au total :
+
+────────────────────────────────────────────────────────────
+  #001  [definition]  Terminologie de base
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Terminologie de base] [definition] L'ensemble étudié est appelé population Ω. Les éléments de Ω sont appelés individus (ou unités statistiques). Chaque individu est décrit par un ensemble de caractéristiques appelées variables statistiques. La v...
+
+────────────────────────────────────────────────────────────
+  #002  [definition]  Variable statistique qualitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique qualitative] [definition] Une variable est dite qualitative si ses modalités ne sont pas mesurables (pas de mesure numérique possible). Variable ordinale : on dispose d'une notion d'ordre entre les modalités. Variable nomina...
+
+────────────────────────────────────────────────────────────
+  #003  [exemple]  Variable statistique qualitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique qualitative] [exemple] Variable ordinale: niveau scolaire, grade.
+
+────────────────────────────────────────────────────────────
+  #004  [exemple]  Variable statistique qualitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique qualitative] [exemple] Variable nominale: les couleurs.
+
+────────────────────────────────────────────────────────────
+  #005  [definition]  Variable statistique quantitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique quantitative] [definition] Une variable est dite quantitative si ses modalités sont mesurables (numériques). Variable discrète : l'ensemble X(Ω) des modalités est fini ou dénombrable (on peut les compter). Variable continue ...
+
+────────────────────────────────────────────────────────────
+  #006  [formule]  Variable statistique quantitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique quantitative] [formule] Bijection variable discrète finie: X(Ω) bijection → [1, n] ⊆ N. Pour une variable discrète finie, il existe une bijection vers un ensemble d'entiers.
+
+────────────────────────────────────────────────────────────
+  #007  [exemple]  Variable statistique quantitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique quantitative] [exemple] Variable discrète: nombre de voitures, nombre de trains par jour.
+
+────────────────────────────────────────────────────────────
+  #008  [exemple]  Variable statistique quantitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique quantitative] [exemple] Variable continue: la taille.
+
+────────────────────────────────────────────────────────────
+  #009  [definition]  Paramètres associés à la distribution d'une série
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Paramètres associés à la distribution d'une série] [definition] On se limitera ici à deux types de caractéristiques statistiques : 1. Tendance centrale : donne un ordre de grandeur de la variable. 2. Dispersion : fournit des informations sur la ...
+
+────────────────────────────────────────────────────────────
+  #010  [definition]  Mode
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Mode] [definition] Si X est une variable nominale, ordinale ou discrète, le mode est la modalité de X la plus représentée (maximum des effectifs). Si X est une variable continue, la classe modale de la distribution est la classe dont la densité ...
+
+────────────────────────────────────────────────────────────
+  #011  [remarque]  Mode
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Mode] [remarque] Pour une variable continue, si l'intervalle [a2, a3[ est une classe modale, cela signifie qu'il peut y avoir plusieurs éléments dans cet intervalle — on ne trouve donc pas le mode comme valeur unique, mais comme classe.
+
+────────────────────────────────────────────────────────────
+  #012  [definition]  Médiane
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Médiane] [definition] La médiane est la valeur centrale de la série (ordonnée croissante) qui partage la série en deux moitiés égales.
+
+────────────────────────────────────────────────────────────
+  #013  [formule]  Médiane
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Médiane] [formule] Formule de la médiane: Med = x((N+1)/2) si N impair, Med = (x(N/2) + x(N/2+1))/2 si N pair. N est le nombre total d'observations, x(i) désigne la i-ème valeur de la série ordonnée. | Conditions: Série ordonnée : x(1) ≤ x(2) ≤ ...
+
+────────────────────────────────────────────────────────────
+  #014  [exemple]  Médiane
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Médiane] [exemple] Calcul de la médiane: Série brute : 21, 25, 28, 30, 27, 24, 31, 21, 28, 30, 25, 25, 28, 26, 25, 25. Série ordonnée : 21, 21, 24, 25, 25, 25, 25, 26, 28, 28, 28, 30, 30, 31. N = 16 est pair, donc Med = (x(8) + x(9))/2 = (25 + 2...
+
+────────────────────────────────────────────────────────────
+  #015  [definition]  Quantile d'ordre α
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Quantile d'ordre α] [definition] Soit α ∈ [0, 1]. On définit le quantile d'ordre α, noté Qα, comme la valeur qui partage la distribution selon l'ordre α.
+
+────────────────────────────────────────────────────────────
+  #016  [formule]  Quantile d'ordre α
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Quantile d'ordre α] [formule] Formule du quantile: Qα = min xi si α=0; max xi si α=1; (x(Nα) + x(Nα+1))/2 si 0<α<1 et Nα∈N; x(floor(Nα)+1) si 0<α<1 et Nα∉N. ⌊·⌋ désigne la partie entière inférieure.
+
+────────────────────────────────────────────────────────────
+  #017  [remarque]  Quantile d'ordre α
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Quantile d'ordre α] [remarque] Cas particuliers — quartiles : Premier quartile : Q1 = Q0,25. Médiane : Med = Q0,5 = Q50%. Troisième quartile : Q3 = Q0,75 = Q75%. Les valeurs α = 0,1; 0,2; ... ; 0,9 correspondent aux déciles.
+
+────────────────────────────────────────────────────────────
+  #018  [definition]  Écart interquartile
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Écart interquartile] [definition] L'écart interquartile est la différence entre le troisième quartile et le premier quartile.
+
+────────────────────────────────────────────────────────────
+  #019  [formule]  Écart interquartile
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Écart interquartile] [formule] Écart interquartile: IQ = Q0,75 - Q0,25 = Q3 - Q1. Représente 50% de la distribution centrale.
+
+────────────────────────────────────────────────────────────
+  #020  [definition]  Moyenne arithmétique
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Moyenne arithmétique] [definition] Soit une série x1, x2, ..., xN. La moyenne est notée X̄ et définie comme la somme des valeurs divisée par le nombre total d'observations.
+
+────────────────────────────────────────────────────────────
+  #021  [formule]  Moyenne arithmétique
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Moyenne arithmétique] [formule] Moyenne arithmétique: X̄ = (1/N) Σ xi = (1/N) Σ ni·xi = Σ fi·xi. ni est l'effectif de la modalité xi et fi = ni/N sa fréquence relative. | Conditions: La moyenne ne peut être définie que sur une variable quantitat...
+
+────────────────────────────────────────────────────────────
+  #022  [remarque]  Moyenne arithmétique
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Moyenne arithmétique] [remarque] La moyenne ne peut être définie que sur une variable quantitative.
+
+────────────────────────────────────────────────────────────
+  #023  [exemple]  Moyenne arithmétique
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Moyenne arithmétique] [exemple] Calcul de la moyenne (poste de péage): Au poste de péage, on compte le nombre de voitures se présentant sur une période de 5 min. Sur 100 périodes de 5 min, on obtient le tableau suivant : Nombre de voitures 1 2 3...
+
+────────────────────────────────────────────────────────────
+  #024  [definition]  Étendue
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Étendue] [definition] L'étendue est la différence entre la valeur maximale et la valeur minimale de la série.
+
+────────────────────────────────────────────────────────────
+  #025  [formule]  Étendue
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Étendue] [formule] Étendue: E = xmax - xmin = x(N) - x(1). Série ordonnée.
+
+────────────────────────────────────────────────────────────
+  #026  [definition]  Variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variance] [definition] La variance de X, notée Var(X), est la somme des carrés des écarts à la moyenne, divisée par le total des effectifs.
+
+────────────────────────────────────────────────────────────
+  #027  [formule]  Variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variance] [formule] Variance: Var(X) = (1/N) Σ ni(xi - X̄)². ni est l'effectif de la modalité xi.
+
+────────────────────────────────────────────────────────────
+  #028  [formule]  Variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variance] [formule] Formule de calcul pratique: Var(X) = X²̄ - (X̄)². X²̄ = (1/N) Σ ni xi².
+
+────────────────────────────────────────────────────────────
+  #029  [preuve]  Variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variance] [preuve] Démonstration de la formule pratique de la variance: Var(X) = (1/N) Σi ni(xi - X̄)² = (1/N) Σi ni(xi² - 2xiX̄ + X̄²) = (1/N) Σi ni xi² - 2X̄·(1/N)Σi ni xi + X̄²·(1/N)Σi ni = X²̄ - 2X̄² + X̄² = X²̄ - (X̄)².
+
+────────────────────────────────────────────────────────────
+  #030  [exemple]  Variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variance] [exemple] Calcul de la variance (poste de péage, suite): Avec X̄ = 5,07 : Var(X) = (1/N) Σ ni(xi - 5,07)² = (2/100)(1-5,07)² + (8/100)(2-5,07)² + ... Solution: σ(X) = √Var(X)
+
+────────────────────────────────────────────────────────────
+  #031  [definition]  Propriétés de la variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Propriétés de la variance] [definition] Propriétés fondamentales de la variance.
+
+────────────────────────────────────────────────────────────
+  #032  [note]  Propriétés de la variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Propriétés de la variance] [note] Var(X) ≥ 0
+
+────────────────────────────────────────────────────────────
+  #033  [note]  Propriétés de la variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Propriétés de la variance] [note] Var(a) = 0 pour toute constante a
+
+────────────────────────────────────────────────────────────
+  #034  [note]  Propriétés de la variance
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Propriétés de la variance] [note] Var(aX) = a² Var(X)
+
+────────────────────────────────────────────────────────────
+  #035  [definition]  Écart-type
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Écart-type] [definition] L'écart-type est la racine carrée de la variance.
+
+────────────────────────────────────────────────────────────
+  #036  [formule]  Écart-type
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Écart-type] [formule] Écart-type: σ(X) = √Var(X). Mesure de dispersion en unité de la variable.
+
+────────────────────────────────────────────────────────────
+  #037  [definition]  Forme de la distribution
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Forme de la distribution] [definition] Les courbes suivantes donnent une idée sur la forme de la dispersion de la distribution : 1. Oblique à droite : Moy > Med > Mod. 2. Oblique à gauche : Moy < Med < Mod. 3. Symétrique : Med = Moy = Mod.
+
+────────────────────────────────────────────────────────────
+  #038  [definition]  Espace des états (Univers)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espace des états (Univers)] [definition] L'espace des états, appelé aussi univers, noté Ω, est l'ensemble de tous les résultats possibles d'une expérience aléatoire.
+
+────────────────────────────────────────────────────────────
+  #039  [exemple]  Espace des états (Univers)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espace des états (Univers)] [exemple] Lancer d'un dé à 6 faces: Ω = {1, 2, 3, 4, 5, 6}
+
+────────────────────────────────────────────────────────────
+  #040  [exemple]  Espace des états (Univers)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espace des états (Univers)] [exemple] Lancer d'un dé indéfiniment: Ω = {(un), un ∈ {1, ..., 6}^(N*)}
+
+────────────────────────────────────────────────────────────
+  #041  [exemple]  Espace des états (Univers)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espace des états (Univers)] [exemple] Marche d'un ivrogne dans une rue: Ω = {(un), un ∈ {1, -1}} (marche aléatoire)
+
+────────────────────────────────────────────────────────────
+  #042  [definition]  Événement
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Événement] [definition] Un événement est une propriété dont on peut dire si elle est réalisée ou non. Il correspond à un sous-ensemble de Ω. Un événement peut être élémentaire : {ωi}. Ou bien ∪i{ωi} = événement équivale...
+
+────────────────────────────────────────────────────────────
+  #043  [definition]  Tribu
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Tribu] [definition] P(Ω) = {A, A ⊆ Ω} est la tribu grossière. Un ensemble A ⊆ P(Ω) est une tribu si : 1. Ω ∈ A et stabilité par complémentaire : ∀A ∈ P(Ω), A ∈ A ⇒ A^c ∈ A. 2. ∀{Ai} ∈ A, ∪i∈N Ai ∈ A.
+
+────────────────────────────────────────────────────────────
+  #044  [definition]  Probabilité
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Probabilité] [definition] Étant donnés un espace Ω et A l'ensemble des événements, une probabilité P sur (Ω, A) est une application P : A → [0, 1] vérifiant : 1. P(Ω) = 1. 2. Pour toute famille (An)n≥0 deux à deux disjo...
+
+────────────────────────────────────────────────────────────
+  #045  [formule]  Probabilité
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Probabilité] [formule] Probabilité de l'union: P(A∪B) = P(A) + P(B) - P(A∩B). Formule générale pour deux événements quelconques.
+
+────────────────────────────────────────────────────────────
+  #046  [formule]  Probabilité
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Probabilité] [formule] Probabilité en espace fini: P(A) = card(A)/card(Ω). En espace fini (dim(Ω) < ∞). | Conditions: Espace fini
+
+────────────────────────────────────────────────────────────
+  #047  [remarque]  Probabilité
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Probabilité] [remarque] En espace fini (dim(Ω) < ∞) : P(A) = card(A)/card(Ω).
+
+────────────────────────────────────────────────────────────
+  #048  [definition]  Indépendance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Indépendance] [definition] Deux événements A et B sont indépendants si et seulement si : A ⊥ B ⇔ P(A ∩ B) = P(A) · P(B), ce qui équivaut à A^c ∪ B^c.
+
+────────────────────────────────────────────────────────────
+  #049  [formule]  Indépendance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Indépendance] [formule] Indépendance: A⊥B ⇔ P(A∩B) = P(A)·P(B). L'indépendance signifie que la réalisation de l'un n'affecte pas l'autre.
+
+────────────────────────────────────────────────────────────
+  #050  [definition]  Probabilité conditionnelle
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Probabilité conditionnelle] [definition] Si P(B) > 0, la probabilité de A sachant B est définie par le quotient de la probabilité de l'intersection par la probabilité de B.
+
+────────────────────────────────────────────────────────────
+  #051  [formule]  Probabilité conditionnelle
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Probabilité conditionnelle] [formule] Probabilité conditionnelle: P(A|B) = P(A∩B)/P(B). Probabilité que A se réalise sachant que B est réalisé. | Conditions: P(B) > 0
+
+────────────────────────────────────────────────────────────
+  #052  [definition]  Échantillon
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Échantillon] [definition] Soit X une variable aléatoire sur Ω. Un échantillon de X de taille n est un n-uplet (X1, ..., Xn) de variables indépendantes et de même loi (i.i.d.) avec la loi de X. Une réalisation de cet éch...
+
+────────────────────────────────────────────────────────────
+  #053  [remarque]  Échantillon
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Échantillon] [remarque] E(X1) = E(X2) = ... = E(Xn)
+
+────────────────────────────────────────────────────────────
+  #054  [remarque]  Échantillon
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Échantillon] [remarque] Var(Xi) = ...
+
+────────────────────────────────────────────────────────────
+  #055  [definition]  Statistique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Statistique] [definition] On appelle statistique sur un échantillon toute fonction de (X1, ..., Xn).
+
+────────────────────────────────────────────────────────────
+  #056  [definition]  Moyenne empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Moyenne empirique] [definition] On appelle moyenne de l'échantillon (ou moyenne empirique) la statistique g(X1, ..., Xn) notée X̄ définie par la moyenne arithmétique des variables de l'échantillon.
+
+────────────────────────────────────────────────────────────
+  #057  [formule]  Moyenne empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Moyenne empirique] [formule] Moyenne empirique: X̄ = (1/n) Σ Xi. Moyenne arithmétique des variables aléatoires de l'échantillon.
+
+────────────────────────────────────────────────────────────
+  #058  [definition]  Espérance et variance de la moyenne empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espérance et variance de la moyenne empirique] [definition] Soit X une variable aléatoire de moyenne µ et d'écart-type σ. Alors l'espérance de la moyenne empirique est µ et sa variance est σ²/n.
+
+────────────────────────────────────────────────────────────
+  #059  [formule]  Espérance et variance de la moyenne empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espérance et variance de la moyenne empirique] [formule] Espérance de la moyenne empirique: E(X̄) = µ. La moyenne empirique est sans biais pour µ.
+
+────────────────────────────────────────────────────────────
+  #060  [formule]  Espérance et variance de la moyenne empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espérance et variance de la moyenne empirique] [formule] Variance de la moyenne empirique: Var(X̄) = σ²/n. La variance diminue avec la taille de l'échantillon.
+
+────────────────────────────────────────────────────────────
+  #061  [preuve]  Espérance et variance de la moyenne empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espérance et variance de la moyenne empirique] [preuve] Démonstration de l'espérance: Linéarité de l'espérance : E(X̄) = E((1/n) Σ Xi) = (1/n) Σ E(Xi) = (1/n)(µ + ... + µ) = nµ/n = µ.
+
+────────────────────────────────────────────────────────────
+  #062  [preuve]  Espérance et variance de la moyenne empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espérance et variance de la moyenne empirique] [preuve] Démonstration de la variance: La variance n'est pas linéaire. Comme les Xi sont indépendantes et de même variance σ² : Var(X̄) = Var((1/n) Σ Xi) = (1/n²) Σ Var(Xi)...
+
+────────────────────────────────────────────────────────────
+  #063  [definition]  Variance empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Variance empirique] [definition] On appelle variance empirique la statistique S̃²(X) définie par la moyenne des carrés des écarts à la moyenne empirique.
+
+────────────────────────────────────────────────────────────
+  #064  [formule]  Variance empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Variance empirique] [formule] Variance empirique: S̃² = (1/n) Σ (Xi - X̄)². Moyenne des carrés des écarts à la moyenne empirique.
+
+────────────────────────────────────────────────────────────
+  #065  [definition]  Espérance de la variance empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espérance de la variance empirique] [definition] Soit X une variable aléatoire d'écart-type σ. On a : E(S̃²) = (n-1)/n · σ².
+
+────────────────────────────────────────────────────────────
+  #066  [formule]  Espérance de la variance empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espérance de la variance empirique] [formule] Espérance de la variance empirique: E(S̃²) = ((n-1)/n) σ². La variance empirique sous-estime la variance réelle (biaisée).
+
+────────────────────────────────────────────────────────────
+  #067  [preuve]  Espérance de la variance empirique
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Espérance de la variance empirique] [preuve] Démonstration de l'espérance de la variance empirique: On développe : S̃² = (1/n) Σi (Xi - X̄)² = (1/n) Σi [(Xi - µ) - (X̄ - µ)]² = (1/n) Σi (Xi - µ)² - (X̄ - µ)². En prenant...
+
+────────────────────────────────────────────────────────────
+  #068  [definition]  Estimation ponctuelle
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation ponctuelle] [definition] Il s'agit d'estimer certaines caractéristiques statistiques de la loi (moyenne, variance, ...) à partir d'une série d'observations (x1, ..., xn). Soit θ un paramètre d'une population ...
+
+────────────────────────────────────────────────────────────
+  #069  [exemple]  Estimation ponctuelle
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation ponctuelle] [exemple] Estimateur naturel de l'espérance: Pour estimer l'espérance E(X) de la loi X, un estimateur naturel est la moyenne empirique X̄ qui produit une estimation x̄.
+
+────────────────────────────────────────────────────────────
+  #070  [definition]  Biais
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Biais] [definition] On appelle biais de T pour θ la valeur : bθ(T) = E(T) - θ. Un estimateur T est dit sans biais si bθ(T) = 0, i.e. E(T) = θ.
+
+────────────────────────────────────────────────────────────
+  #071  [formule]  Biais
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Biais] [formule] Biais: bθ(T) = E(T) - θ. Différence entre l'espérance de l'estimateur et le vrai paramètre.
+
+────────────────────────────────────────────────────────────
+  #072  [exemple]  Biais
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Biais] [exemple] Biais de la moyenne empirique: θ = µ, T = X̄ : E(X̄) = µ ⇒ bµ(X̄) = E(X̄) - µ = 0. Donc X̄ est sans biais pour µ.
+
+────────────────────────────────────────────────────────────
+  #073  [definition]  Convergence
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Convergence] [definition] Un estimateur T est dit convergent si E(T) tend vers θ lorsque n → ∞.
+
+────────────────────────────────────────────────────────────
+  #074  [exemple]  Convergence
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Convergence] [exemple] Convergence de la variance empirique: Pour S̃² : E(S̃²) = (n-1)/n · σ² = (1 - 1/n)σ² → σ² quand n → ∞.
+
+────────────────────────────────────────────────────────────
+  #075  [definition]  Erreur quadratique moyenne (MSE)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Erreur quadratique moyenne (MSE)] [definition] De façon générale : T - θ = (T - E(T)) + (E(T) - θ). La qualité d'un estimateur se mesure également par l'erreur quadratique moyenne (EQM, ou MSE) définie par : EQM(T) = E[...
+
+────────────────────────────────────────────────────────────
+  #076  [formule]  Erreur quadratique moyenne (MSE)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Erreur quadratique moyenne (MSE)] [formule] Erreur quadratique moyenne: EQM(T) = E[(T-θ)²]. Mesure globale de la qualité de l'estimateur.
+
+────────────────────────────────────────────────────────────
+  #077  [definition]  Décomposition biais-variance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Décomposition biais-variance] [definition] Soit T un estimateur de θ. On a : E[(T - θ)²] = Var(T) + (bθ(T))².
+
+────────────────────────────────────────────────────────────
+  #078  [formule]  Décomposition biais-variance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Décomposition biais-variance] [formule] Décomposition biais-variance: E[(T-θ)²] = Var(T) + (bθ(T))². L'EQM se décompose en variance de l'estimateur plus carré du biais.
+
+────────────────────────────────────────────────────────────
+  #079  [definition]  Maximum de vraisemblance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Maximum de vraisemblance] [definition] Soit T un estimateur du paramètre θ à étudier. On a estimation par la méthode du maximum de vraisemblance. Soit X une variable aléatoire réelle de loi paramétrique (discrète ou con...
+
+────────────────────────────────────────────────────────────
+  #080  [definition]  Fonction de vraisemblance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Fonction de vraisemblance] [definition] On appelle fonction de vraisemblance de θ pour une réalisation (x1, ..., xn) d'un échantillon (X1, ..., Xn) la fonction de θ : L(x1, ..., xn; θ) = f(x1, ..., xn; θ) = Π f(xi, θ).
+
+────────────────────────────────────────────────────────────
+  #081  [formule]  Fonction de vraisemblance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Fonction de vraisemblance] [formule] Fonction de vraisemblance: L(x1,...,xn; θ) = Π f(xi, θ). Produit des densités ou probabilités individuelles.
+
+────────────────────────────────────────────────────────────
+  #082  [definition]  Estimateur du maximum de vraisemblance (EMV)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimateur du maximum de vraisemblance (EMV)] [definition] La méthode consiste à estimer θ par la valeur qui maximise L (fonction de vraisemblance) : θ̂ = {θ | L(θ̂) = max θ L(θ)}. On définit la log-vraisemblance ln(L)....
+
+────────────────────────────────────────────────────────────
+  #083  [definition]  Étapes de calcul du maximum de vraisemblance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Étapes de calcul du maximum de vraisemblance] [definition] Étape 1 — Condition nécessaire (point critique) : ∂L/∂θ = 0 ou ∂log L/∂θ = 0 ⇔ θ = θ*. On dit que θ* est un point critique. Étape 2 — Vérification du maximum : ...
+
+────────────────────────────────────────────────────────────
+  #084  [formule]  Étapes de calcul du maximum de vraisemblance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Étapes de calcul du maximum de vraisemblance] [formule] Condition du premier ordre: ∂L/∂θ = 0 ou ∂logL/∂θ = 0 ⇔ θ = θ*. Condition nécessaire pour un point critique.
+
+────────────────────────────────────────────────────────────
+  #085  [formule]  Étapes de calcul du maximum de vraisemblance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Étapes de calcul du maximum de vraisemblance] [formule] Condition du second ordre: ∂²logL/∂θ² < 0 ⇒ maximum, > 0 ⇒ minimum. Vérification que le point critique est bien un maximum.
+
+────────────────────────────────────────────────────────────
+  #086  [remarque]  Étapes de calcul du maximum de vraisemblance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Étapes de calcul du maximum de vraisemblance] [remarque] Dans le cas f(n, y) = x² + y : ∂f(x,y)/∂x = 2x = 0 ⇔ x = 0. Le point (0, y) est un couple critique (mais pas un maximum dans cet exemple).
+
+────────────────────────────────────────────────────────────
+  #087  [definition]  Estimation par intervalle de confiance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation par intervalle de confiance] [definition] Au lieu d'estimer un paramètre inconnu θ en donnant une valeur unique θ̂, il est plus judicieux d'en fournir un intervalle [θ1, θ2] contenant le θ, appelé intervalle ...
+
+────────────────────────────────────────────────────────────
+  #088  [definition]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [definition] Soit (X1, ..., Xn) un échantillon de loi normale de paramètres m et σ. ∀i ∈ [1, n] : Xi ~ N(m, σ). On suppose d'abord σ connu. Étape 1 : X̄ ~ N(m, σ/√n). Étape 2 ...
+
+────────────────────────────────────────────────────────────
+  #089  [formule]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [formule] Distribution de la moyenne: X̄ ~ N(m, σ/√n). La moyenne empirique suit une loi normale centrée sur m. | Conditions: Échantillon de loi normale, σ connu
+
+────────────────────────────────────────────────────────────
+  #090  [formule]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [formule] Variable réduite: Y = (X̄ - m)/(σ/√n) → N(0,1). Standardisation de la moyenne empirique. | Conditions: TCL
+
+────────────────────────────────────────────────────────────
+  #091  [formule]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [formule] Intervalle de confiance: IC = [x̄ - (σ/√n)t, x̄ + (σ/√n)t]. Intervalle de confiance de la moyenne avec risque α. | Conditions: t tel que F(t) = 1 - α/2, F fonction d...
+
+────────────────────────────────────────────────────────────
+  #092  [remarque]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [remarque] Les bornes T1 = X̄ - (σ/√n)t et T2 = X̄ + (σ/√n)t ne sont pas des nombres mais des variables aléatoires.
+
+────────────────────────────────────────────────────────────
+  #093  [remarque]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [remarque] On dispose d'une réalisation numérique x̄ = X̄(ω) et donc d'une réalisation de l'intervalle.
+
+────────────────────────────────────────────────────────────
+  #094  [remarque]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [remarque] Pour trouver t : soit F(t) la fonction de répartition de N(0, 1). On cherche t tel que F(t) = 1 - α/2. On utilise la table statistique de N(0, 1).
+
+────────────────────────────────────────────────────────────
+  #095  [exemple]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [exemple] Durée de vie d'ampoules: On suppose que la durée de vie, exprimée en heures, d'une ampoule électrique d'un certain type suit une loi N(m, 20). Une étude sur un échan...
+
+────────────────────────────────────────────────────────────
+  #096  [definition]  TD du 02/12/2025 — Poste de péage
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 02/12/2025 — Poste de péage] [definition] Exercice sur les paramètres de tendance centrale et de dispersion.
+
+────────────────────────────────────────────────────────────
+  #097  [exercice]  TD du 02/12/2025 — Poste de péage
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 02/12/2025 — Poste de péage] [exercice] Poste de péage: Au poste de péage, on compte le nombre de voitures se présentant sur une période de 5 min. Sur 100 périodes de 5 min, on obtient les résultats suivants : Nombre de voitures 1 2 3 4 5 ...
+
+────────────────────────────────────────────────────────────
+  #098  [definition]  TD du 09/12/2025 — Panneaux publicitaires
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 09/12/2025 — Panneaux publicitaires] [definition] Exercice sur les probabilités et l'indépendance.
+
+────────────────────────────────────────────────────────────
+  #099  [exercice]  TD du 09/12/2025 — Panneaux publicitaires
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 09/12/2025 — Panneaux publicitaires] [exercice] Panneaux publicitaires: Dans une rue, un panneau publicitaire est remarqué par un passant sur quatre. 1. Sachant que l'on dispose de 2 panneaux dans la même rue, calculer la probabilité qu'un...
+
+────────────────────────────────────────────────────────────
+  #100  [exercice]  TD du 09/12/2025 — Panneaux publicitaires
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 09/12/2025 — Panneaux publicitaires] [exercice] QCM aléatoire: Un étudiant doit répondre à 4 questions à choix multiple où 3 réponses sont proposées à chaque fois, une seule étant correcte. On suppose que l'étudiant répond au hasard et de ...
+
+────────────────────────────────────────────────────────────
+  #101  [definition]  TD du 16/12/2025 — Durée de vie d'un ordinateur (loi exponentielle)
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 16/12/2025 — Durée de vie d'un ordinateur (loi exponentielle)] [definition] Exercice sur la loi exponentielle et ses propriétés.
+
+────────────────────────────────────────────────────────────
+  #102  [exercice]  TD du 16/12/2025 — Durée de vie d'un ordinateur (loi exponentielle)
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 16/12/2025 — Durée de vie d'un ordinateur (loi exponentielle)] [exercice] Durée de vie d'un ordinateur: La durée de vie en années d'un ordinateur est une variable aléatoire X suivant une loi exponentielle de paramètre λ > 0. 1. Sachant que...
+
+────────────────────────────────────────────────────────────
+  #103  [definition]  TD du 16/12/2025 — Enquête homme/femme
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 16/12/2025 — Enquête homme/femme] [definition] Exercice sur les probabilités conditionnelles et l'espérance.
+
+────────────────────────────────────────────────────────────
+  #104  [exercice]  TD du 16/12/2025 — Enquête homme/femme
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 16/12/2025 — Enquête homme/femme] [exercice] Enquête homme/femme: Lors d'une enquête, on a interrogé 5 hommes et 3 femmes. On choisit au hasard et sans remise les personnes une à une jusqu'à obtention d'un homme. Soit X le nombre de tirage...
+
+────────────────────────────────────────────────────────────
+  #105  [definition]  TD du 23/12/2025 — Propriétés de la moyenne et variance empiriques
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 23/12/2025 — Propriétés de la moyenne et variance empiriques] [definition] Exercice de démonstration sur les propriétés fondamentales.
+
+────────────────────────────────────────────────────────────
+  #106  [exercice]  TD du 23/12/2025 — Propriétés de la moyenne et variance empiriques
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 23/12/2025 — Propriétés de la moyenne et variance empiriques] [exercice] Propriétés de la moyenne et variance empiriques: Soit X̄ = (1/n) Σ Xi la moyenne empirique. 1. Montrer que E(X̄) = µ et Var(X̄) = σ²/n. 2. Soit S̃² = (1/n) Σ (Xi - X̄...
+
+────────────────────────────────────────────────────────────
+  #107  [definition]  TD du 06/01/2026 — MV : loi de Poisson
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 06/01/2026 — MV : loi de Poisson] [definition] Exercice sur l'estimation par maximum de vraisemblance pour la loi de Poisson.
+
+────────────────────────────────────────────────────────────
+  #108  [exercice]  TD du 06/01/2026 — MV : loi de Poisson
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 06/01/2026 — MV : loi de Poisson] [exercice] Maximum de vraisemblance : loi de Poisson: On souhaite estimer le paramètre λ > 0 d'une loi de Poisson à partir d'un n-échantillon (x1, ..., xn) avec : f(x, λ) = e^(-λ) λ^x / x!, x ∈ N. 1. Donne...
+
+────────────────────────────────────────────────────────────
+  #109  [definition]  TD du 06/01/2026 — MV : loi normale
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 06/01/2026 — MV : loi normale] [definition] Exercice sur l'estimation par maximum de vraisemblance pour la loi normale.
+
+────────────────────────────────────────────────────────────
+  #110  [exercice]  TD du 06/01/2026 — MV : loi normale
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 06/01/2026 — MV : loi normale] [exercice] Maximum de vraisemblance : loi normale: On souhaite estimer les paramètres (σ, µ) de la loi normale (loi mère) avec : f(x, σ, µ) = (1/(σ√(2π))) e^(-(x-µ)²/(2σ²)). 1. Donner la fonction de vraisembl...
+
+────────────────────────────────────────────────────────────
+  #111  [definition]  TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance] [definition] Rappel du cours sur l'estimation par intervalle de confiance et application.
+
+────────────────────────────────────────────────────────────
+  #112  [exercice]  TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance] [exercice] Rappel du coursSQLe cours sur l'estimation par intervalle de confiance: On reprend l'estimation par intervalle de confiance (voir Chapitr...
+
+────────────────────────────────────────────────────────────
+  #113  [exercice]  TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance] [exercice] Exemple : ampoules (reprise): On suppose que la durée de vie en heures d'une ampoule électrique d'un certain type suit une loi N(m, σ²). ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Collection : cours_Statistique_cours
+
+Chargement du modèle d'embedding...
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 5060.30it/s]
+
+Top 5 résultats pour : "Qu'est-ce que la variance ?"
+
+────────────────────────────────────────────────────────────
+  #1  Score : 0.697  [definition]  Propriétés de la variance
+  Chapitre : Statistique descriptive (Rappel)
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Propriétés de la variance] [definition] Propriétés fondamentales de la variance.
+
+────────────────────────────────────────────────────────────
+  #2  Score : 0.660  [definition]  Variance
+  Chapitre : Statistique descriptive (Rappel)
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variance] [definition] La variance de X, notée Var(X), est la somme des carrés des écarts à la moyenne, divisée par le total des effectifs.
+
+────────────────────────────────────────────────────────────
+  #3  Score : 0.647  [definition]  Écart-type
+  Chapitre : Statistique descriptive (Rappel)
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Écart-type] [definition] L'écart-type est la racine carrée de la variance.
+
+────────────────────────────────────────────────────────────
+  #4  Score : 0.587  [formule]  Variance
+  Chapitre : Statistique descriptive (Rappel)
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variance] [formule] Variance: Var(X) = (1/N) Σ ni(xi - X̄)². ni est l'effectif de la modalité xi.
+
+────────────────────────────────────────────────────────────
+  #5  Score : 0.583  [note]  Propriétés de la variance
+  Chapitre : Statistique descriptive (Rappel)
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Propriétés de la variance] [note] Var(aX) = a² Var(X)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Collection : cours_Statistique_cours
+
+Chargement du modèle d'embedding...
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 4540.90it/s]
+
+Top 5 résultats pour : "intervalle de confiance"
+
+────────────────────────────────────────────────────────────
+  #1  Score : 0.725  [definition]  TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance] [definition] Rappel du cours sur l'estimation par intervalle de confiance et application.
+
+────────────────────────────────────────────────────────────
+  #2  Score : 0.723  [exercice]  TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 23/02/2026 — Théorème des valeurs intermédiaires / Estimation par intervalle de confiance] [exercice] Rappel du coursSQLe cours sur l'estimation par intervalle de confiance: On reprend l'estimation par intervalle de confiance (voir Chapitr...
+
+────────────────────────────────────────────────────────────
+  #3  Score : 0.692  [formule]  Estimation d'une moyenne (variance connue)
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation d'une moyenne (variance connue)] [formule] Intervalle de confiance: IC = [x̄ - (σ/√n)t, x̄ + (σ/√n)t]. Intervalle de confiance de la moyenne avec risque α. | Conditions: t tel que F(t) = 1 - α/2, F fonction d...
+
+────────────────────────────────────────────────────────────
+  #4  Score : 0.674  [definition]  Estimation par intervalle de confiance
+  Chapitre : Statistique inférentielle : Échantillonnage et Estimations
+  Texte    : [Chapitre: Statistique inférentielle : Échantillonnage et Estimations | Concept: Estimation par intervalle de confiance] [definition] Au lieu d'estimer un paramètre inconnu θ en donnant une valeur unique θ̂, il est plus judicieux d'en fournir un intervalle [θ1, θ2] contenant le θ, appelé intervalle ...
+
+────────────────────────────────────────────────────────────
+  #5  Score : 0.480  [definition]  TD du 09/12/2025 — Panneaux publicitaires
+  Chapitre : Travaux Dirigés (TD) et Corrigés
+  Texte    : [Chapitre: Travaux Dirigés (TD) et Corrigés | Concept: TD du 09/12/2025 — Panneaux publicitaires] [definition] Exercice sur les probabilités et l'indépendance.
+Collection : cours_Statistique_cours
+
+Total chunks : 113
+
+Répartition par type :
+  definition  :  45  █████████████████████████████████████████████
+  formule     :  27  ███████████████████████████
+  exemple     :  14  ██████████████
+  remarque    :  10  ██████████
+  exercice    :  10  ██████████
+  preuve      :   4  ████
+  note        :   3  ███
+
+Répartition par chapitre :
+   58  Statistique inférentielle : Échantillonnage et Estimations
+   37  Statistique descriptive (Rappel)
+   18  Travaux Dirigés (TD) et Corrigés
+
+Nombre de concepts distincts : 45
+
+5 premiers chunks :
+
+────────────────────────────────────────────────────────────
+  #001  [definition]  Terminologie de base
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Terminologie de base] [definition] L'ensemble étudié est appelé population Ω. Les éléments de Ω sont appelés individus (ou unités statistiques). Chaque individu est décrit par un ensemble de caractéristiques appelées variables statistiques. La v...
+
+────────────────────────────────────────────────────────────
+  #002  [definition]  Variable statistique qualitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique qualitative] [definition] Une variable est dite qualitative si ses modalités ne sont pas mesurables (pas de mesure numérique possible). Variable ordinale : on dispose d'une notion d'ordre entre les modalités. Variable nomina...
+
+────────────────────────────────────────────────────────────
+  #003  [exemple]  Variable statistique qualitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique qualitative] [exemple] Variable ordinale: niveau scolaire, grade.
+
+────────────────────────────────────────────────────────────
+  #004  [exemple]  Variable statistique qualitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique qualitative] [exemple] Variable nominale: les couleurs.
+
+────────────────────────────────────────────────────────────
+  #005  [definition]  Variable statistique quantitative
+  Chapitre : Statistique descriptive (Rappel)
+  Source   : Statistique_cours
+  Texte    : [Chapitre: Statistique descriptive (Rappel) | Concept: Variable statistique quantitative] [definition] Une variable est dite quantitative si ses modalités sont mesurables (numériques). Variable discrète : l'ensemble X(Ω) des modalités est fini ou dénombrable (on peut les compter). Variable continue ...

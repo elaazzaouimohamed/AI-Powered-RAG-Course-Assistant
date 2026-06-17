@@ -1,0 +1,54 @@
+.message-bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 80%;
+}
+
+/* Message de l'utilisateur : aligné à droite */
+.message-bubble--user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+/* Message du bot : aligné à gauche */
+.message-bubble--assistant {
+  align-self: flex-start;
+}
+
+/* ── Avatar du bot ─────────────────────────────────────────────────────────── */
+
+.message-bubble__avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Contenu de la bulle ──────────────────────────────────────────────────── */
+
+.message-bubble__content {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--border-radius);
+  line-height: var(--line-height-normal);
+  font-size: var(--font-size-sm);
+}
+
+.message-bubble--user .message-bubble__content {
+  background-color: var(--color-bubble-user);
+  color: var(--color-bubble-user-text);
+  border-bottom-right-radius: var(--space-1);
+}
+
+.message-bubble--assistant .message-bubble__content {
+  background-color: var(--color-bubble-bot);
+  color: var(--color-bubble-bot-text);
+  border-bottom-left-radius: var(--space-1);
+}

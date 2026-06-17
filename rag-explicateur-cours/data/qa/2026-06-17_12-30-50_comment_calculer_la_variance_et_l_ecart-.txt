@@ -1,0 +1,11 @@
+Date    : 17/06/2026 12:30:50
+Cours   : Statistique_cours
+Thème   : —
+
+QUESTION
+=================================================================
+Comment calculer la variance et l ecart-type ?
+
+RÉPONSE
+=================================================================
+[ERREUR API] list index out of range

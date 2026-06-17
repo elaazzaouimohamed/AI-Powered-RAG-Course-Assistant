@@ -1,0 +1,90 @@
+/* ── Variables globales CSS ─────────────────────────────────────────────────
+   Toutes les valeurs de design sont définies ici et référencées
+   dans les fichiers CSS des composants via var(--nom-variable).
+   ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Palette principale */
+  --color-primary:        #2563eb;   /* bleu principal */
+  --color-primary-hover:  #1d4ed8;
+  --color-primary-light:  #eff6ff;
+
+  --color-secondary:      #7c3aed;   /* violet secondaire */
+  --color-secondary-light: #f5f3ff;
+
+  --color-success:        #16a34a;
+  --color-warning:        #d97706;
+  --color-danger:         #dc2626;
+  --color-danger-light:   #fef2f2;
+
+  /* Neutrals */
+  --color-bg:             #f8fafc;
+  --color-surface:        #ffffff;
+  --color-border:         #e2e8f0;
+  --color-border-focus:   #93c5fd;
+
+  --color-text:           #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-muted:     #94a3b8;
+  --color-text-inverse:   #ffffff;
+
+  /* Sidebar */
+  --color-sidebar-bg:     #1e293b;
+  --color-sidebar-text:   #cbd5e1;
+  --color-sidebar-active: #2563eb;
+
+  /* Chat bubbles */
+  --color-bubble-user:    #2563eb;
+  --color-bubble-bot:     #f1f5f9;
+  --color-bubble-user-text: #ffffff;
+  --color-bubble-bot-text:  #0f172a;
+
+  /* ── Espacements ─────────────────────────────────────────────────────── */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+
+  /* ── Typographie ─────────────────────────────────────────────────────── */
+  --font-family:      'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-xs:     0.75rem;    /* 12px */
+  --font-size-sm:     0.875rem;   /* 14px */
+  --font-size-base:   1rem;       /* 16px */
+  --font-size-lg:     1.125rem;   /* 18px */
+  --font-size-xl:     1.25rem;    /* 20px */
+  --font-size-2xl:    1.5rem;     /* 24px */
+  --font-size-3xl:    1.875rem;   /* 30px */
+
+  --font-weight-normal:   400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  --line-height-tight:  1.3;
+  --line-height-normal: 1.6;
+
+  /* ── Mise en page ─────────────────────────────────────────────────────── */
+  --sidebar-width:      260px;
+  --header-height:      60px;
+  --chat-max-width:     760px;
+  --border-radius-sm:   6px;
+  --border-radius:      10px;
+  --border-radius-lg:   16px;
+  --border-radius-full: 9999px;
+
+  /* ── Ombres ──────────────────────────────────────────────────────────── */
+  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow:      0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.12);
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --transition-fast:   100ms ease;
+  --transition:        200ms ease;
+  --transition-slow:   350ms ease;
+}

@@ -1,0 +1,113 @@
+{
+  "titre_annale": "Analyse en Composantes Principales (ACP)",
+  "metadata": {
+    "nombre_pages": 28,
+    "auteur": null,
+    "annee": null,
+    "niveau": null
+  },
+  "parties": [
+    {
+      "titre": "Introduction à l'analyse multivariée et à l'ACP",
+      "page_start": 1,
+      "page_end": 5,
+      "concepts": [
+        {
+          "nom": "Analyse multivariée",
+          "definition": "Ensemble de techniques pour découvrir la structure, éventuellement compliquée, d'un tableau à plusieurs dimensions et de traduire par une structure plus simple et qui la résume au mieux (le plus souvent, une représentation graphique).",
+          "formules": [],
+          "remarques": [
+            "L'analyse univariée et bivariée ne permettent pas de capter les liaisons multiples entre variables.",
+            "Les méthodes d'analyse de données ont largement démontré leur efficacité dans l'étude des gros volumes de données grâce aux développements de l'informatique."
+          ],
+          "exemples": [],
+          "exercices": [],
+          "notes": []
+        },
+        {
+          "nom": "Méthodes descriptives ou exploratoires",
+          "definition": "Permettent d'organiser les données de manière visuelle, sous forme de tableaux et de graphiques, pour avoir une vision structurée et faciliter la compréhension.",
+          "formules": [],
+          "remarques": [],
+          "exemples": [],
+          "exercices": [],
+          "notes": []
+        },
+        {
+          "nom": "Méthodes explicatives",
+          "definition": "Utilisées à des fins prédictives. En identifiant comment des paramètres influent sur un résultat.",
+          "formules": [],
+          "remarques": [],
+          "exemples": [],
+          "exercices": [],
+          "notes": []
+        },
+        {
+          "nom": "Méthodes factorielles",
+          "definition": "L'Analyse en Composantes principales (ACP) fait partie du groupe des méthodes descriptives multidimensionnelles appelées méthodes factorielles.",
+          "formules": [],
+          "remarques": [],
+          "exemples": [],
+          "exercices": [],
+          "notes": []
+        },
+        {
+          "nom": "Objectifs de l'ACP",
+          "definition": "L'ACP propose, à partir d'un tableau rectangulaire de données comportant les valeurs des variables quantitatives pour des individus, des représentations géométriques de ces individus et de ces variables. Elle permet d'étudier : la variabilité entre les individus (différences et ressemblances entre individus) et les liaisons entre les variables (groupes de variables très corrélées entre elles, qui peuvent être regroupées en de nouvelles variables synthétiques).",
+          "formules": [],
+          "remarques": [
+            "Méthode descriptive - exploratoire : visualisation de données par graphiques simples.",
+            "Synthétiser et résumer de grands tableaux individus × variables.",
+            "Projection (réduire) à un espace de petite dimension (par exemple 2) en déformant le moins possible la réalité."
+          ],
+          "exemples": [
+            {
+              "titre": "Exemple de données restaurant",
+              "description": "Nous demandons aux clients qui utilisent un restaurant s'ils sont satisfaits, à travers 3 critères sur lesquels ils doivent se positionner sur une échelle de 1 à 5, 1 correspondant à 'très insatisfait' et 5 à 'très satisfait'. Critères : Qualité, Service, Prix. Tableau de 6 individus avec moyennes respectives : 3,16; 3; 2,67.",
+              "solution": null
+            }
+          ],
+          "exercices": [],
+          "notes": []
+        },
+        {
+          "nom": "Type de données pour l'ACP",
+          "definition": "L'ACP s'intéresse à des tableaux de données rectangulaires avec des individus en lignes et des variables quantitatives en colonnes.",
+          "formules": [
+            {
+              "nom": "Moyenne et écart-type",
+              "latex": "\\bar{x}_k = \\frac{1}{n}\\sum_{i=1}^{n} x_{ik}, \\quad \\sigma_k = \\sqrt{\\frac{1}{n}\\sum_{i=1}^{n} (x_{ik} - \\bar{x}_k)^2}",
+              "explication": "Pour la variable k, on note la moyenne et l'écart-type."
+            }
+          ],
+          "remarques": [
+            "Les champs d'application de l'ACP sont multiples : chimie, biologie, recherche économique et sociale, traitement d'images et Apprentissage Automatique.",
+            "L'ACP est majoritairement utilisée pour: décrire et visualiser des données, les décorréler (la nouvelle base est constituée d'axes qui ne sont pas corrélés entre eux), effectuer une réduction de dimension des données."
+          ],
+          "exemples": [
+            {
+              "titre": "Exemple températures mensuelles",
+              "description": "12 variables : Les températures mensuelles moyennes (sur 30 ans). 15 individus : Les villes de France. Le tableau peut être vu comme un ensemble de lignes ou un ensemble de colonnes.",
+              "solution": null
+            }
+          ],
+          "exercices": [],
+          "notes": []
+        },
+        {
+          "nom": "Etude des individus et des variables",
+          "definition": "Etude des individus : Etudier la ressemblance des individus du point de vue de l'ensemble des variables. Etude des variables : Etudier la ressemblance des variables (corrélation).",
+          "formules": [],
+          "remarques": [
+            "Construire des groupes d'individus homogènes (à l'intérieur d'un groupe, les individus se ressemblent et d'un groupe à l'autre ils sont différents).",
+            "Recherche d'un petit nombre d'indicateurs synthétiques pour résumer beaucoup de variables.",
+            "Lien entre les deux études : Caractérisation des classes d'individus par les variables."
+          ],
+          "exemples": [],
+          "exercices": [],
+          "notes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+Date    : 17/06/2026 12:32:33
+Cours   : Statistique_cours
+Theme   : -
+
+QUESTION
+=================================================================
+Comment calculer la variance et l ecart-type ?
+
+RÉPONSE
+=================================================================
+ ## Variance
+
+D'après le cours, la **variance** de X, notée **Var(X)**, est définie comme la somme des carrés des écarts à la moyenne, divisée par le total des effectifs.
+
+### Formule de définition :
+$$\text{Var}(X) = \frac{1}{N} \sum n_i(x_i - \bar{X})^2$$
+
+où $n_i$ est l'effectif de la modalité $x_i$.
+
+### Formule de calcul pratique (recommandée) :
+$$\text{Var}(X) = \overline{X^2} - (\bar{X})^2$$
+
+avec $\overline{X^2} = \frac{1}{N} \sum n_i x_i^2$
+
+---
+
+## Écart-type
+
+L'**écart-type**, noté **$\sigma(X)$**, est simplement la **racine carrée de la variance** :
+
+$$\sigma(X) = \sqrt{\text{Var}(X)}$$
+
+---
+
+## Exemple du cours
+
+Pour le cas du poste de péage avec $\bar{X} = 5{,}07$ :
+- On calcule d'abord $\text{Var}(X) = \frac{1}{N} \sum n_i(x_i - 5{,}07)^2$
+- Puis $\sigma(X) = \sqrt{\text{Var}(X)}$
+
+---
+
+**Point clé** : La formule pratique $\text{Var}(X) = \overline{X^2} - (\bar{X})^2$ est souvent plus simple pour le calcul à la main, car elle évite de calculer tous les écarts à la moyenne.

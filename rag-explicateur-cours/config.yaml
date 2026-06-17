@@ -1,0 +1,44 @@
+# ── Configuration du système RAG Explicateur ─────────────────────────────────
+# Toutes les valeurs peuvent être surchargées par des variables d'environnement.
+
+extraction:
+  dossier_pdfs: "data/pdfs"
+  dossier_extraits: "data/extracted"
+  dossier_images: "data/images"
+  echelle_rendu: 2.0          # facteur d'agrandissement pour le rendu PNG (2.0 ≈ 144 DPI)
+  tolerance_ligne: 10         # tolérance verticale (pts) pour le tri spatial des blocs
+  seuil_repetition: 0.5       # fraction de pages au-delà de laquelle une ligne est répétée
+  seuil_texte_sparse: 100     # nb de caractères en dessous duquel un texte est "sparse"
+  seuil_ratio_image: 0.15     # ratio surface_image/surface_page déclenchant l'alerte formule
+
+chunking:
+  taille_max: 512             # taille maximale d'un chunk (tokens)
+  chevauchement: 50           # overlap entre chunks consécutifs (tokens)
+  strategie: "semantique"     # "fixe" ou "semantique"
+
+embeddings:
+  modele: "nomic-embed-text"  # modèle Ollama pour les embeddings
+  dimension: 768              # dimension des vecteurs (dépend du modèle)
+  batch_size: 32              # nb de chunks par appel à l'API Ollama
+
+retrieval:
+  top_k: 5                    # nb de chunks récupérés par requête
+  type: "hybride"             # "dense", "sparse", ou "hybride"
+  alpha: 0.5                  # poids du score dense dans la fusion hybride (0=sparse, 1=dense)
+
+generation:
+  modele_llm: "mistral"       # modèle Ollama pour la génération
+  temperature: 0.1            # faible pour les réponses factuelles
+  max_tokens: 1024
+  ollama_url: "http://localhost:11434"
+
+quiz:
+  nb_questions_defaut: 5
+  difficultes:
+    - "facile"
+    - "moyen"
+    - "difficile"
+
+ui:
+  titre: "RAG Explicateur — Cours Universitaires"
+  port: 8501

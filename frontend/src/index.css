@@ -1,0 +1,56 @@
+/* ── Styles globaux de l'application ────────────────────────────────────────
+   Importe les fondations et définit les classes utilitaires partagées.
+   ────────────────────────────────────────────────────────────────────────── */
+
+@import './styles/variables.css';
+@import './styles/reset.css';
+
+/* ── Mise en page principale ─────────────────────────────────────────────── */
+
+#root {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-layout {
+  display: flex;
+  width: 100%;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+/* ── Classes utilitaires globales ────────────────────────────────────────── */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: var(--border-radius-full);
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Classe appliquée sur <body> quand la sidebar est ouverte sur mobile */
+.sidebar-open {
+  overflow: hidden;
+}
