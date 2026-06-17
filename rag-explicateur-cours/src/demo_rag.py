@@ -150,8 +150,13 @@ def recherche_hybride(query, idx):
 
 def extraire_parents(candidats, idx):
     res = idx["collection"].get(ids=candidats, include=["metadatas"])
+    # remettre dans l'ordre RRF (collection.get ne le garantit pas)
+    map_meta = {cid: m for cid, m in zip(res["ids"], res["metadatas"])}
     vus, contextes = set(), []
-    for meta in res["metadatas"]:
+    for cid in candidats:
+        meta = map_meta.get(cid)
+        if not meta:
+            continue
         parent = meta.get("parent_content", "")
         if parent not in vus:
             vus.add(parent)
