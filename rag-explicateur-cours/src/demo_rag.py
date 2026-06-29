@@ -1,11 +1,17 @@
 """
-Démonstration RAG complète : question → recherche hybride → réponse NVIDIA.
+Démonstration RAG complète : question → recherche hybride → réponse LLM.
+
+Backends disponibles :
+  nvidia    — NVIDIA cloud (Kimi K2.6) — internet requis, rapide, clé API
+  ollama    — LLM local via Ollama     — hors-ligne, CPU, lent
+  lmstudio  — LLM local via LM Studio  — hors-ligne, GPU Intel Xe, RECOMMANDÉ
 
 Usage :
-    python src/demo_rag.py                                  # exemples (cours par défaut)
-    python src/demo_rag.py --question "ta question"         # question libre
-    python src/demo_rag.py --cours 4-kmeans --question "…"  # autre cours
-    python src/demo_rag.py --exemples                       # liste des exemples
+    python src/demo_rag.py --question "ta question"                       # nvidia (défaut)
+    python src/demo_rag.py --backend lmstudio --question "ta question"    # LM Studio (top)
+    python src/demo_rag.py --backend ollama --question "ta question"      # Ollama CPU
+    python src/demo_rag.py --backend lmstudio --modele gemma3:4b -q "…"  # modèle personnalisé
+    python src/demo_rag.py --cours 4-kmeans --backend lmstudio -q "…"    # autre cours
 """
 
 import sys
@@ -31,8 +37,21 @@ CHROMA_DIR      = str(_racine / "data" / "chroma")
 PDFS_DIR        = _racine / "data" / "pdfs"
 DEFAULT_COURS   = "Statistique_cours"
 EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+
+# ── Backend NVIDIA (cloud) ────────────────────────────────────────────────────
 NVIDIA_API_URL  = "https://integrate.api.nvidia.com/v1/chat/completions"
 NVIDIA_MODEL    = os.environ.get("NVIDIA_MODEL", "moonshotai/kimi-k2.6")
+
+# ── Backend Ollama (local CPU) ────────────────────────────────────────────────
+OLLAMA_URL      = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+OLLAMA_MODEL    = os.environ.get("OLLAMA_MODEL", "gemma3:4b")
+
+# ── Backend LM Studio (local GPU Intel Xe — RECOMMANDÉ) ──────────────────────
+LMSTUDIO_URL    = os.environ.get("LMSTUDIO_URL", "http://localhost:1234/v1")
+LMSTUDIO_MODEL  = os.environ.get("LMSTUDIO_MODEL", "gemma3:4b")
+
+DEFAULT_BACKEND = "nvidia"
+
 RRF_K           = 60
 TOP_K           = 12
 TOP_PARENTS     = 3
@@ -226,22 +245,17 @@ def extraire_parents(candidats, idx):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Génération via NVIDIA / Kimi K2.6
+# Construction du prompt (commun aux deux backends)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def generer_reponse(question, contextes, titre_cours):
-    cle = os.environ.get("NVIDIA_API_KEY", "")
-    if not cle:
-        return "[ERREUR] NVIDIA_API_KEY manquante dans .env"
-
+def _construire_prompt(question: str, contextes: list, titre_cours: str) -> str:
     contexte_llm = ""
     for i, ctx in enumerate(contextes, 1):
         contexte_llm += (
             f"\n\n=== Contexte {i} : {ctx['concept']} "
             f"(Chapitre : {ctx['chapitre']}) ===\n{ctx['contenu']}"
         )
-
-    prompt = f"""Tu es un professeur expert en "{titre_cours}" pour des étudiants universitaires.
+    return f"""Tu es un professeur expert en "{titre_cours}" pour des étudiants universitaires.
 Réponds à la question de l'étudiant de façon claire, rigoureuse et pédagogique,
 en te basant UNIQUEMENT sur le contenu du cours fourni ci-dessous.
 Si une information n'est pas dans le contexte, dis-le clairement plutôt que d'inventer.
@@ -259,6 +273,18 @@ Si une information n'est pas dans le contexte, dis-le clairement plutôt que d'i
 - N'invente aucune information absente du contexte
 
 Réponse du Professeur :"""
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Backend 1 : NVIDIA / Kimi K2.6 (cloud)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def generer_reponse(question, contextes, titre_cours):
+    cle = os.environ.get("NVIDIA_API_KEY", "")
+    if not cle:
+        return "[ERREUR] NVIDIA_API_KEY manquante dans .env"
+
+    prompt = _construire_prompt(question, contextes, titre_cours)
 
     headers = {
         "Authorization": f"Bearer {cle}",
@@ -309,11 +335,159 @@ Réponse du Professeur :"""
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Backend 2 : Ollama (local CPU, 100% hors-ligne)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def verifier_ollama() -> bool:
+    try:
+        return requests.get(f"{OLLAMA_URL}/api/tags", timeout=3).status_code == 200
+    except Exception:
+        return False
+
+
+def lister_modeles_ollama() -> list[str]:
+    try:
+        r = requests.get(f"{OLLAMA_URL}/api/tags", timeout=5)
+        return [m["name"] for m in r.json().get("models", [])]
+    except Exception:
+        return []
+
+
+def generer_reponse_ollama(question: str, contextes: list, titre_cours: str,
+                            modele: str = OLLAMA_MODEL) -> str:
+    if not verifier_ollama():
+        return (
+            "[ERREUR] Ollama n'est pas lancé.\n"
+            f"  → ollama serve\n  → ollama pull {modele}"
+        )
+    prompt = _construire_prompt(question, contextes, titre_cours)
+    payload = {
+        "model":    modele,
+        "messages": [{"role": "user", "content": prompt}],
+        "stream":   True,
+        "options":  {"temperature": 0.3, "num_predict": 2048},
+    }
+    reponse_texte = ""
+    try:
+        resp = requests.post(f"{OLLAMA_URL}/api/chat", json=payload,
+                             stream=True, timeout=600)
+        resp.raise_for_status()
+        for ligne in resp.iter_lines():
+            if not ligne:
+                continue
+            try:
+                obj = json.loads(ligne)
+                token = obj.get("message", {}).get("content", "")
+                if token:
+                    reponse_texte += token
+                    print(token, end="", flush=True)
+                if obj.get("done"):
+                    break
+            except json.JSONDecodeError:
+                pass
+    except Exception as e:
+        if reponse_texte:
+            print(f"\n  [avertissement] {e}", flush=True)
+        else:
+            return f"[ERREUR Ollama] {e}"
+    print()
+    return reponse_texte
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Backend 3 : LM Studio (local GPU Intel Xe — RECOMMANDÉ)
+# API OpenAI-compatible, exploite l'accélération Intel via OpenVINO
+# ─────────────────────────────────────────────────────────────────────────────
+
+def verifier_lmstudio() -> bool:
+    try:
+        return requests.get(f"{LMSTUDIO_URL}/models", timeout=3).status_code == 200
+    except Exception:
+        return False
+
+
+def lister_modeles_lmstudio() -> list[str]:
+    try:
+        r = requests.get(f"{LMSTUDIO_URL}/models", timeout=5)
+        return [m["id"] for m in r.json().get("data", [])]
+    except Exception:
+        return []
+
+
+def generer_reponse_lmstudio(question: str, contextes: list, titre_cours: str,
+                               modele: str = LMSTUDIO_MODEL) -> str:
+    if not verifier_lmstudio():
+        return (
+            "[ERREUR] LM Studio n'est pas lancé ou le serveur local n'est pas activé.\n"
+            "  1. Ouvrez LM Studio\n"
+            "  2. Chargez un modèle (gemma3:4b recommandé)\n"
+            "  3. Allez dans l'onglet 'Local Server' → Start Server"
+        )
+    prompt = _construire_prompt(question, contextes, titre_cours)
+    payload = {
+        "model":       modele,
+        "messages":    [{"role": "user", "content": prompt}],
+        "max_tokens":  2048,
+        "temperature": 0.3,
+        "stream":      True,
+    }
+    reponse_texte = ""
+    try:
+        resp = requests.post(
+            f"{LMSTUDIO_URL}/chat/completions",
+            headers={"Content-Type": "application/json"},
+            json=payload,
+            stream=True,
+            timeout=600,
+        )
+        resp.raise_for_status()
+        for ligne in resp.iter_lines():
+            if not ligne:
+                continue
+            ligne_str = ligne.decode("utf-8") if isinstance(ligne, bytes) else ligne
+            if not ligne_str.startswith("data: "):
+                continue
+            data = ligne_str[6:].strip()
+            if data == "[DONE]":
+                break
+            try:
+                obj = json.loads(data)
+                choix = obj.get("choices", [])
+                if not choix:
+                    continue
+                delta = choix[0].get("delta", {}).get("content", "")
+                if delta:
+                    reponse_texte += delta
+                    print(delta, end="", flush=True)
+            except (json.JSONDecodeError, KeyError, IndexError):
+                pass
+    except Exception as e:
+        if reponse_texte:
+            print(f"\n  [avertissement] {e}", flush=True)
+        else:
+            return f"[ERREUR LM Studio] {e}"
+    print()
+    return reponse_texte
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Pipeline complet pour une question
 # ─────────────────────────────────────────────────────────────────────────────
 
-def repondre(question, idx, verbose=True):
+def repondre(question, idx, verbose=True, backend=DEFAULT_BACKEND, modele=None):
     titre = idx["dataset"].get("titre_annale", "Statistique")
+
+    modele_effectif = modele or {
+        "nvidia":   NVIDIA_MODEL,
+        "ollama":   OLLAMA_MODEL,
+        "lmstudio": LMSTUDIO_MODEL,
+    }.get(backend, NVIDIA_MODEL)
+
+    label_backend = {
+        "nvidia":   f"NVIDIA ({modele_effectif})",
+        "ollama":   f"Ollama ({modele_effectif})",
+        "lmstudio": f"LM Studio · Intel Xe ({modele_effectif})",
+    }.get(backend, backend)
 
     if verbose:
         print(f"\n{'='*65}")
@@ -326,7 +500,7 @@ def repondre(question, idx, verbose=True):
     if verbose:
         print(f"  Intention détectée : {intention or 'générale'}")
         print(f"\n{'─'*65}")
-        print(f"  CHUNKS RÉCUPÉRÉS DEPUIS LA BASE DE DONNÉES ({len(contextes)} contextes)")
+        print(f"  CHUNKS RÉCUPÉRÉS ({len(contextes)} contextes)")
         print(f"{'─'*65}")
         for i, ctx in enumerate(contextes, 1):
             print(f"\n  [{i}] Concept  : {ctx['concept']}")
@@ -335,11 +509,16 @@ def repondre(question, idx, verbose=True):
             for ligne in ctx["contenu"].split("\n"):
                 print(f"         {ligne}")
         print(f"\n{'─'*65}")
-        print(f"  → Envoi au LLM ({NVIDIA_MODEL})...")
+        print(f"  → Envoi au LLM : {label_backend}")
         print(f"{'─'*65}")
-        print(f"\n  RÉPONSE GÉNÉRÉE :\n{'─'*65}")
+        print(f"\n  RÉPONSE :\n{'─'*65}")
 
-    reponse = generer_reponse(question, contextes, titre)
+    if backend == "ollama":
+        reponse = generer_reponse_ollama(question, contextes, titre, modele=modele_effectif)
+    elif backend == "lmstudio":
+        reponse = generer_reponse_lmstudio(question, contextes, titre, modele=modele_effectif)
+    else:
+        reponse = generer_reponse(question, contextes, titre)
 
     if verbose:
         print(f"{'─'*65}\n")
@@ -405,57 +584,109 @@ def _resoudre_json(cours_stem: str | None) -> str:
 def main():
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-    parser = argparse.ArgumentParser(description="Démo RAG — Explicateur de cours")
+    parser = argparse.ArgumentParser(
+        description="Démo RAG — Explicateur de cours",
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
     parser.add_argument("--cours", "-c", metavar="STEM",
-                        help=f"Cours à interroger (stem du JSON, ex: 4-kmeans). "
-                             f"Défaut : {DEFAULT_COURS}")
+                        help=f"Cours (stem du JSON). Défaut : {DEFAULT_COURS}")
+    parser.add_argument("--backend", "-b",
+                        choices=["nvidia", "ollama", "lmstudio"],
+                        default=DEFAULT_BACKEND,
+                        help="Backend LLM : nvidia | ollama | lmstudio (défaut : nvidia)")
+    parser.add_argument("--modele", "-m", metavar="NOM",
+                        help="Modèle à utiliser (dépend du backend choisi)\n"
+                             "  lmstudio : gemma3:4b (défaut), phi4-mini, qwen2.5:7b…\n"
+                             "  ollama   : gemma3:4b (défaut), phi3:mini, mistral…\n"
+                             "  nvidia   : moonshotai/kimi-k2.6 (défaut)")
     parser.add_argument("--question", "-q", help="Pose ta propre question")
     parser.add_argument("--exemples", "-e", action="store_true",
                         help="Afficher la liste des questions exemples")
-    parser.add_argument("--id", type=int, help="Lancer seulement l'exemple N (1-5)")
+    parser.add_argument("--id", type=int, help="Lancer l'exemple N")
     parser.add_argument("--save", "-s", action="store_true",
-                        help="Sauvegarder la question et la réponse dans data/qa/")
+                        help="Sauvegarder la Q&R dans data/qa/")
+    parser.add_argument("--modeles", action="store_true",
+                        help="Lister les modèles disponibles (ollama ou lmstudio)")
     args = parser.parse_args()
 
-    json_path = _resoudre_json(args.cours)
-    stem = Path(json_path).stem
+    backend = args.backend
+    modele  = args.modele
 
-    # Choisir la liste d'exemples selon le cours
-    if "kmeans" in stem.lower() or "k-means" in stem.lower() or "km" in stem.lower():
-        liste_ex = EXEMPLES_KMEANS
-    else:
-        liste_ex = EXEMPLES
+    # ── Lister les modèles disponibles ───────────────────────────────────────
+    if args.modeles:
+        if backend == "lmstudio":
+            if not verifier_lmstudio():
+                print("LM Studio n'est pas lancé ou le serveur local est inactif.")
+                print("  → Ouvrez LM Studio → onglet 'Local Server' → Start Server")
+            else:
+                for m in lister_modeles_lmstudio():
+                    print(f"  • {m}")
+        else:
+            if not verifier_ollama():
+                print("Ollama n'est pas lancé : ollama serve")
+            else:
+                modeles = lister_modeles_ollama()
+                for m in (modeles or [f"(aucun — ollama pull {OLLAMA_MODEL})"]):
+                    print(f"  • {m}")
+        return
+
+    # ── Vérification du backend local avant de charger l'index ───────────────
+    if backend == "lmstudio" and not verifier_lmstudio():
+        print("[ERREUR] LM Studio n'est pas lancé.")
+        print("  1. Téléchargez LM Studio : https://lmstudio.ai")
+        print("  2. Chargez le modèle 'gemma-3-4b' (onglet Discover)")
+        print("  3. Onglet 'Local Server' → Start Server")
+        sys.exit(1)
+
+    if backend == "ollama":
+        if not verifier_ollama():
+            print("[ERREUR] Ollama n'est pas lancé : ollama serve")
+            sys.exit(1)
+        m = modele or OLLAMA_MODEL
+        dispo = lister_modeles_ollama()
+        if not any(m in d for d in dispo):
+            print(f"[ERREUR] Modèle '{m}' absent d'Ollama.")
+            if dispo:
+                print(f"  Disponibles : {', '.join(dispo)}")
+            print(f"  → ollama pull {m}")
+            sys.exit(1)
+
+    json_path = _resoudre_json(args.cours)
+    stem      = Path(json_path).stem
+
+    liste_ex = EXEMPLES_KMEANS if ("kmeans" in stem.lower() or "k-means" in stem.lower()) else EXEMPLES
 
     if args.exemples:
         print(f"\nQuestions exemples pour '{stem}' :\n")
         for ex in liste_ex:
             print(f"  [{ex['id']}] {ex['theme']}")
             print(f"      {ex['question']}\n")
-        print(f"Lancer : python src/demo_rag.py --id 2 --cours {stem}")
+        print(f"Lancer : python src/demo_rag.py --backend {backend} --id 2 --cours {stem}")
         return
 
     idx = charger_index(json_path)
 
-    if args.question:
-        reponse = repondre(args.question, idx)
+    def _repondre(question, theme=""):
+        r = repondre(question, idx, backend=backend, modele=modele)
         if args.save:
-            sauvegarder(args.question, reponse, json_path)
+            sauvegarder(question, r, json_path, theme=theme)
+        return r
+
+    if args.question:
+        _repondre(args.question)
     elif args.id:
         ex = next((e for e in liste_ex if e["id"] == args.id), None)
         if not ex:
             sys.exit(f"Exemple {args.id} introuvable (1-{len(liste_ex)})")
         print(f"\n── Thème : {ex['theme']}")
-        reponse = repondre(ex["question"], idx)
-        if args.save:
-            sauvegarder(ex["question"], reponse, json_path, theme=ex["theme"])
+        _repondre(ex["question"], theme=ex["theme"])
     else:
-        # Lancer tous les exemples
         print(f"\n{'#'*65}")
-        print(f"  DÉMO RAG — {len(liste_ex)} questions d'étudiants ({stem})")
+        print(f"  DÉMO RAG — {len(liste_ex)} questions ({stem}) [{backend}]")
         print(f"{'#'*65}")
         for ex in liste_ex:
             print(f"\n── Thème : {ex['theme']}")
-            repondre(ex["question"], idx)
+            _repondre(ex["question"], theme=ex["theme"])
             input("\n  [Entrée pour la question suivante...]")
 
 

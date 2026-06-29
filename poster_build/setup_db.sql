@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS rag_llm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS 'raguser'@'localhost' IDENTIFIED BY 'XsgINjUA3NVdxE48RDfwjbls';
+GRANT ALL PRIVILEGES ON rag_llm.* TO 'raguser'@'localhost';
+FLUSH PRIVILEGES;

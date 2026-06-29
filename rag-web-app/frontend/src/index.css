@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================================================
+   Thème : rampe de gris (variables --g-*) + accent (variables --a-*)
+   - Mode clair (défaut) : palette SaaS épurée — page gris très clair,
+     surfaces blanches, ombres douces, texte ardoise.
+   - Mode sombre : rampe sombre classique.
+   Les composants n'utilisent que des classes sémantiques (.card, .input…)
+   et `gray-*` / `indigo-*` mappés sur ces variables → thématisable sans
+   toucher au JSX.
+   =================================================================== */
+
+/* ---- Mode CLAIR (défaut) : vrai palette SaaS, pas une simple inversion ---- */
+:root, [data-theme="light"] {
+  --g-50:  15 23 42;     /* titres            #0f172a */
+  --g-100: 30 41 59;     /* texte fort        #1e293b */
+  --g-200: 51 65 85;     /* texte             #334155 */
+  --g-300: 71 85 105;    /* texte secondaire  #475569 */
+  --g-400: 100 116 139;  /* labels / muted    #64748b */
+  --g-500: 148 163 184;  /* placeholder       #94a3b8 */
+  --g-600: 203 213 225;  /* icônes douces     #cbd5e1 */
+  --g-700: 226 232 240;  /* bordures inputs   #e2e8f0 */
+  --g-800: 238 241 245;  /* bordures / hover  #eef1f5 */
+  --g-900: 255 255 255;  /* surfaces (cartes, sidebar) blanc */
+  --g-950: 246 247 250;  /* fond de page      #f6f7fa */
+}
+
+/* ---- Mode SOMBRE ---- */
+[data-theme="dark"] {
+  --g-50: 249 250 251;  --g-100: 243 244 246; --g-200: 229 231 235;
+  --g-300: 209 213 219; --g-400: 156 163 175; --g-500: 107 114 128;
+  --g-600: 75 85 99;    --g-700: 55 65 81;    --g-800: 31 41 55;
+  --g-900: 17 24 39;    --g-950: 3 7 18;
+}
+
+/* Accent par défaut : bleu. Surchargé par [data-accent="..."]. */
+:root,
+[data-accent="blue"]    { --a-300: 147 197 253; --a-400: 96 165 250;  --a-500: 59 130 246;  --a-600: 37 99 235;  }
+[data-accent="indigo"]  { --a-300: 165 180 252; --a-400: 129 140 248; --a-500: 99 102 241;  --a-600: 79 70 229;  }
+[data-accent="emerald"] { --a-300: 110 231 183; --a-400: 52 211 153;  --a-500: 16 185 129;  --a-600: 5 150 105;  }
+[data-accent="violet"]  { --a-300: 196 181 253; --a-400: 167 139 250; --a-500: 139 92 246;  --a-600: 124 58 237; }
+[data-accent="rose"]    { --a-300: 253 164 175; --a-400: 251 113 133; --a-500: 244 63 94;   --a-600: 225 29 72;  }
+
+@layer base {
+  body { @apply bg-gray-950 text-gray-100 font-sans antialiased; }
+  /* Transition douce lors du changement de thème */
+  body, .card, aside, main, header, input, select, textarea, button {
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease,
+                box-shadow .2s ease;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-600/60 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-gray-500/70; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg
+           font-medium shadow-sm shadow-indigo-600/20
+           transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-indigo-600/30
+           active:translate-y-0 active:shadow-sm
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0;
+  }
+  .btn-secondary {
+    @apply bg-gray-900 text-gray-200 border border-gray-700 hover:bg-gray-800
+           px-4 py-2.5 rounded-lg font-medium shadow-sm transition-colors
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply text-gray-400 hover:text-gray-50 hover:bg-gray-800 px-3 py-2 rounded-lg
+           transition-colors;
+  }
+  .input {
+    @apply w-full bg-gray-900 border border-gray-700 text-gray-100 rounded-lg px-4 py-2.5
+           placeholder-gray-500 shadow-sm
+           focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30
+           transition-colors;
+  }
+  .card {
+    @apply bg-gray-900 border border-gray-800 rounded-xl p-4;
+  }
+}
+
+/* Ombres douces façon SaaS — visibles surtout en mode clair */
+[data-theme="light"] .card  { box-shadow: 0 1px 2px rgb(16 24 40 / .04), 0 1px 3px rgb(16 24 40 / .07); }
+[data-theme="light"] .input { box-shadow: 0 1px 2px rgb(16 24 40 / .04); }
+[data-theme="light"] .elevated { box-shadow: 0 10px 30px -12px rgb(16 24 40 / .18), 0 4px 10px -6px rgb(16 24 40 / .08); }
+
+.prose-chat { @apply text-gray-100 leading-relaxed; }
+.prose-chat h1, .prose-chat h2, .prose-chat h3 {
+  @apply font-semibold text-gray-50 mt-4 mb-2;
+}
+.prose-chat p  { @apply mb-3; }
+.prose-chat ul { @apply list-disc list-inside mb-3 space-y-1; }
+.prose-chat ol { @apply list-decimal list-inside mb-3 space-y-1; }
+.prose-chat code {
+  @apply bg-gray-800 text-indigo-400 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+.prose-chat pre {
+  @apply bg-gray-800 rounded-lg p-4 overflow-x-auto mb-3;
+}
+.prose-chat pre code { @apply bg-transparent p-0; }
+.prose-chat strong { @apply text-gray-50 font-semibold; }
+.prose-chat sup, .prose-chat sub { @apply text-indigo-500; }
+
+.typing-dot {
+  @apply w-2 h-2 bg-indigo-400 rounded-full animate-bounce;
+}
+
+/* ===================================================================
+   MOUVEMENT — micro-animations pour une UI vivante (pas statique)
+   =================================================================== */
+
+/* Blobs flottants (arrière-plans) */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(20px, -30px) scale(1.06); }
+  66%      { transform: translate(-15px, 15px) scale(0.96); }
+}
+@keyframes float-rev {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-25px, 25px) scale(1.08); }
+}
+.animate-blob      { animation: float-slow 14s ease-in-out infinite; }
+.animate-blob-rev  { animation: float-rev  18s ease-in-out infinite; }
+
+/* Entrée en fondu + glissement vers le haut */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up .55s cubic-bezier(.21,.6,.35,1) forwards;
+}
+/* Décalages pour un effet en cascade */
+.delay-1 { animation-delay: .07s; }
+.delay-2 { animation-delay: .14s; }
+.delay-3 { animation-delay: .21s; }
+.delay-4 { animation-delay: .28s; }
+.delay-5 { animation-delay: .35s; }
+
+/* Entrée latérale (éléments de liste, messages) */
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in { animation: slide-in .35s ease-out both; }
+
+/* Apparition d'un message de chat */
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-pop-in { animation: pop-in .3s cubic-bezier(.21,.6,.35,1) both; }
+
+/* Dégradé animé (bouton/accent vivant) */
+@keyframes gradient-pan {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-pan 6s ease infinite;
+}
+
+/* Lueur pulsée (logo, badges) */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(var(--a-500) / .35); }
+  50%      { box-shadow: 0 0 0 10px rgb(var(--a-500) / 0); }
+}
+.animate-glow { animation: pulse-glow 2.6s ease-in-out infinite; }
+
+/* Particules qui se déplacent réellement (fond de login immersif) */
+@keyframes p-move-a {
+  0%, 100% { transform: translate(0, 0) scale(1);        opacity: .25; }
+  50%      { transform: translate(28px, -44px) scale(1.5); opacity: .85; }
+}
+@keyframes p-move-b {
+  0%, 100% { transform: translate(0, 0) scale(1);         opacity: .2;  }
+  50%      { transform: translate(-32px, -28px) scale(1.6); opacity: .8;  }
+}
+@keyframes p-move-c {
+  0%, 100% { transform: translate(0, 0) scale(1);        opacity: .3;  }
+  50%      { transform: translate(18px, 34px) scale(1.4);  opacity: .75; }
+}
+.animate-twinkle   { animation: p-move-a 8s  ease-in-out infinite; }
+.animate-twinkle-2 { animation: p-move-b 11s ease-in-out infinite; }
+.animate-twinkle-3 { animation: p-move-c 9.5s ease-in-out infinite; }
+
+/* Soulèvement au survol — pour cartes / éléments cliquables */
+.lift { transition: transform .2s ease, box-shadow .2s ease; }
+.lift:hover { transform: translateY(-3px); }
+[data-theme="light"] .lift:hover {
+  box-shadow: 0 12px 28px -12px rgb(16 24 40 / .22), 0 6px 12px -8px rgb(16 24 40 / .1);
+}
+[data-theme="dark"] .lift:hover {
+  box-shadow: 0 12px 28px -12px rgb(0 0 0 / .6);
+}
+
+/* Respecte la préférence « réduire les animations » */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
