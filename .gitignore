@@ -27,3 +27,6 @@ Thumbs.db
 
 # ChromaDB vector store data (large binary data, regenerated from course PDFs)
 **/data/chroma/
+
+# Poster build artifacts (internal use only)
+poster_build/
